@@ -1,0 +1,87 @@
+/* Slide Animation Base Styles (add these to your skills.css) */
+.slide-animate {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial positions for different slide directions */
+.slide-left {
+  transform: translateX(-60px);
+}
+
+.slide-right {
+  transform: translateX(60px);
+}
+
+.slide-down {
+  transform: translateY(-60px);
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated state - when element becomes visible */
+.slide-animate.animate,
+.fade-up.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Progress bar animations */
+.skills-list .group .absolute.h-full {
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects for skill items */
+.skills-list .group:hover .absolute.h-full {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Keep your existing animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-left,
+  .slide-right {
+    transform: translateX(0) translateY(30px);
+  }
+  
+  .slide-animate,
+  .fade-up {
+    transition-duration: 0.6s;
+  }
+}

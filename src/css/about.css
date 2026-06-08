@@ -1,0 +1,97 @@
+/* Slide Animation Base Styles */
+.slide-animate {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial positions for different slide directions */
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+.slide-up {
+  transform: translateY(80px);
+}
+
+.slide-down {
+  transform: translateY(-80px);
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated state - when element becomes visible */
+.slide-animate.animate,
+.fade-up.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Transition delays for staggered animations */
+.slide-animate[style*="transition-delay"],
+.fade-up[style*="transition-delay"] {
+  transition-delay: var(--delay, 0s);
+}
+
+/* Hover effects for info lists */
+.about-list ul li {
+  transition: all 0.3s ease;
+}
+
+.about-list ul li:hover {
+  transform: translateX(8px);
+}
+
+/* Background pulse animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Optional: Add a subtle scale effect to cards on hover */
+.about-list {
+  transition: all 0.3s ease;
+}
+
+.about-list:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-left,
+  .slide-right,
+  .slide-up,
+  .slide-down {
+    transform: translateX(0) translateY(20px);
+  }
+  
+  .slide-animate,
+  .fade-up {
+    transition-duration: 0.6s;
+  }
+}

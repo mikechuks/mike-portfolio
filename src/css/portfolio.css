@@ -1,0 +1,154 @@
+/* Slide Animation Base Styles (add to your portfolio.css) */
+.slide-animate {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial positions for different slide directions */
+.slide-left {
+  transform: translateX(-60px);
+}
+
+.slide-right {
+  transform: translateX(60px);
+}
+
+.slide-up {
+  transform: translateY(60px);
+}
+
+.slide-down {
+  transform: translateY(-60px);
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated state - when element becomes visible */
+.slide-animate.animate,
+.fade-up.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Portfolio item specific animations */
+.portfolio-item {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keep your existing animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hover effect enhancements */
+.portfolio-item:hover {
+  transform: translateY(-8px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-up {
+    transform: translateY(40px);
+  }
+  
+  .slide-animate,
+  .fade-up {
+    transition-duration: 0.6s;
+  }
+  
+  .portfolio-item {
+    transform: translateY(0);
+  }
+  
+  .portfolio-item:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Grid item staggered animation */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Smooth image transitions */
+.portfolio-item img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Category badge animation */
+.portfolio-item .absolute.top-4.right-4 {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Overlay content animation */
+.portfolio-item .absolute.inset-0.flex.flex-col {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Filter buttons hover effect */
+.menu span {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.menu span:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* View more button animation */
+button.group {
+  position: relative;
+  overflow: hidden;
+}
+
+button.group .absolute {
+  transition: transform 0.3s ease;
+}

@@ -1,0 +1,218 @@
+/* Slide Animation Base Styles (add to your sidebar.css) */
+.slide-animate {
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial positions for different slide directions */
+.slide-left {
+  transform: translateX(-30px);
+}
+
+.slide-right {
+  transform: translateX(30px);
+}
+
+.slide-down {
+  transform: translateY(-30px);
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade in animation */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Animated state - when element becomes visible */
+.slide-animate.animate,
+.fade-up.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Keep your existing animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in down animation for mobile header */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.5s ease-out forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile menu item hover effects */
+@media (max-width: 768px) {
+  .slide-left {
+    transform: translateX(-20px);
+  }
+  
+  .slide-right {
+    transform: translateX(20px);
+  }
+  
+  .slide-down {
+    transform: translateY(-20px);
+  }
+  
+  .fade-up {
+    transform: translateY(15px);
+  }
+}
+
+/* Sidebar scrollbar styling */
+.side-con::-webkit-scrollbar {
+  width: 5px;
+}
+
+.side-con::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.side-con::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a855f7, #ec4899);
+  border-radius: 10px;
+}
+
+.side-con::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #9333ea, #db2777);
+}
+
+/* Navigation item active state */
+.side-con a.active {
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+  border-left: 3px solid #a855f7;
+}
+
+/* Smooth transitions for all interactive elements */
+.side-con a,
+.side-con button,
+.side-con .social-links a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Profile image shine effect */
+.img-text .relative.group:hover .rounded-full {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+/* Menu item ripple effect */
+.side-con a {
+  position: relative;
+  overflow: hidden;
+}
+
+.side-con a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.side-con a:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Social media links container */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Optional: Add backdrop blur to sidebar on modern browsers */
+@supports (backdrop-filter: blur(10px)) {
+  .side-con {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(17, 24, 39, 0.95), rgba(88, 28, 135, 0.95), rgba(17, 24, 39, 0.95));
+  }
+}

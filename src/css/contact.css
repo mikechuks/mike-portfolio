@@ -1,0 +1,178 @@
+/* Slide Animation Base Styles (add to your contact.css) */
+.slide-animate {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial positions for different slide directions */
+.slide-left {
+  transform: translateX(-60px);
+}
+
+.slide-right {
+  transform: translateX(60px);
+}
+
+.slide-up {
+  transform: translateY(60px);
+}
+
+.slide-down {
+  transform: translateY(-60px);
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated state - when element becomes visible */
+.slide-animate.animate,
+.fade-up.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Keep your existing animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Contact card hover effects */
+.contact-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Social links container */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* Form input focus effects */
+input:focus, textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group hover effects */
+.relative.group:hover .bg-gradient-to-r {
+  opacity: 0.15;
+}
+
+/* Button hover animation */
+button.group .absolute {
+  transition: transform 0.3s ease;
+}
+
+/* Map container hover effect */
+.map-container {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-left,
+  .slide-right {
+    transform: translateX(0) translateY(30px);
+  }
+  
+  .slide-down {
+    transform: translateY(-30px);
+  }
+  
+  .slide-animate,
+  .fade-up {
+    transition-duration: 0.6s;
+  }
+  
+  .contact-card {
+    transform: translateY(0);
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Animation delays for form elements */
+.form-group {
+  transition-delay: var(--delay, 0s);
+}
+
+/* Smooth scrolling for the page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add loading animation for form submission */
+@keyframes buttonPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+button[type="submit"]:active {
+  animation: buttonPulse 0.3s ease;
+}
+
+/* Card content animations */
+.contact-info-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Icon wrapper hover effect */
+.icon-wrapper {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradient text animation */
+.bg-gradient-to-r.bg-clip-text {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
