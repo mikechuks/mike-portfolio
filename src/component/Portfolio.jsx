@@ -195,13 +195,6 @@ const Portfolio = () => {
                 }`}>
                   {item.category}
                 </div>
-
-                {/* Mobile tap instruction */}
-                {window.innerWidth <= 768 && activeItemId !== item.id && (
-                  <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
-                    👆 Tap to open
-                  </div>
-                )}
               </div>
             </div>
           ))}
