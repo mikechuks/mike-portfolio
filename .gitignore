@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+  // "homepage": "https://mikechuks.github.io/mike-portfolio/",
+    // "predeploy": "npm run build",
+    // "deploy": "gh-pages -d dist"

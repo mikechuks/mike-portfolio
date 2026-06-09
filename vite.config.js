@@ -10,5 +10,5 @@ export default defineConfig({
     tailwindcss(),
     babel({ presets: [reactCompilerPreset()] }),
   ],
-  base: "/mike-portfolio"
+  // base: "/mike-portfolio"
 })
