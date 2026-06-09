@@ -4,7 +4,7 @@ const Fotter = () => {
   return (
     <footer className='p-6'>
         <p>© Copyright iPortfolio All Rights Reserved</p>
-        <p>Designed by BootstrapMade Distributed by ThemeWagon</p>
+        <p>Designed by Nwoye Michael</p>
     </footer>
   )
 }
