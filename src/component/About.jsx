@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import '../css/about.css';
 import { about } from '../data/about.js';
-import proImg from "../assets/ChatGPT Image Jun 2, 2026, 04_32_51 AM.png";
+import proImg from "../assets/ChatGPT Image Jun 2, 2026, 04_37_29 AM.png";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);

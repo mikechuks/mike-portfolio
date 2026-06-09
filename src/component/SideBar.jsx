@@ -124,23 +124,23 @@ const Sidebar = () => {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-20 w-60 h-60 bg-purple-500 rounded-full blur-3xl opacity-20 animate-float"></div>
           <div className="absolute -bottom-40 -left-20 w-60 h-60 bg-pink-500 rounded-full blur-3xl opacity-20 animate-float animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('')] opacity-20"></div>
         </div>
 
-        {/* Profile Section */}
+        {/* Profile Section - FIXED: Removed spinning border ring that was causing blur */}
         <div className='img-text grid justify-items-center items-center py-8 px-4 relative z-10 mt-4 md:mt-0'>
-          {/* Animated Border Ring */}
+          {/* Simple clean profile image without blur or spinning animation */}
           <div className={`relative group slide-animate slide-down ${isContentVisible ? 'animate' : ''}`} style={{ transitionDelay: '0.1s' }}>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 animate-spin-slow opacity-75 group-hover:opacity-100 transition-opacity duration-300" 
-                 style={{ padding: '3px', width: 'calc(100% + 8px)', height: 'calc(100% + 8px)', top: '-4px', left: '-4px' }}>
-            </div>
+            {/* Removed the spinning gradient ring that was causing issues */}
             <div className="relative rounded-full overflow-hidden transform transition-all duration-500 group-hover:scale-105">
               <img 
                 src={proImg} 
                 alt="Profile" 
-                className='w-32 md:w-36 lg:w-40 rounded-full border-4 border-white/20 shadow-xl'
+                className='w-32 md:w-36 lg:w-40 rounded-full border-4 border-purple-500/50 shadow-xl object-cover'
               />
             </div>
+            
+            {/* Optional: Simple static ring instead of spinning one */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10"></div>
           </div>
           
           {/* Name with gradient */}
@@ -157,12 +157,12 @@ const Sidebar = () => {
         {/* Navigation Menu */}
         <ul className='mt-8 space-y-1 px-4 relative z-10'>
           {[
-            { name: 'Home', icon: '🏠', href: '/' },
-            { name: 'About', icon: '👤', href: '/' },
-            { name: 'Resume', icon: '📄', href: '/resume' },
-            { name: 'Portfolio', icon: '🎨', href: '/' },
-            { name: 'Skill', icon: '⚙️', href: '/' },
-            { name: 'Contact', icon: '📧', href: '/contact' }
+            { name: 'Home', icon: '', href: '/' },
+            { name: 'About', icon: '', href: '/' },
+            { name: 'Resume', icon: '', href: '/' },
+            { name: 'Portfolio', icon: '', href: '/' },
+            { name: 'Skill', icon: '', href: '/' },
+            { name: 'Contact', icon: '', href: '/' }
           ].map((item, index) => (
             <li key={index} className='relative group'>
               <a 
@@ -178,11 +178,6 @@ const Sidebar = () => {
                 {item.name === 'Home' && (
                   <span className="w-1.5 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></span>
                 )}
-                
-                {/* Dropdown Arrow */}
-                {item.hasDropdown && (
-                  <span className="text-xl transform group-hover:rotate-180 transition-transform duration-300">▼</span>
-                )}
               </a>
               
               {/* Hover Line Effect */}
@@ -192,31 +187,35 @@ const Sidebar = () => {
         </ul>
 
         {/* Social Media Links */}
-        <div className="bottom-8 left-0 right-0 px-4 z-10">
+        <div className=" bottom-8 left-0 right-0 px-4 z-10">
           <div className="flex justify-center gap-4">
               <a 
                 href="https://web.facebook.com/profile.php?id=100064047870058"
                 className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-xl hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110 hover:rotate-6 fade-up ${isContentVisible ? 'animate' : ''}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FacebookIcon/>
+                <FacebookIcon fontSize="small"/>
               </a>
               <a 
                 href="#"
                 className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-xl hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110 hover:rotate-6 fade-up ${isContentVisible ? 'animate' : ''}`}
               >
-                <InstagramIcon/>
+                <InstagramIcon fontSize="small"/>
               </a>
               <a 
                 href="#"
                 className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-xl hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110 hover:rotate-6 fade-up ${isContentVisible ? 'animate' : ''}`}
               >
-                <YouTubeIcon/>
+                <YouTubeIcon fontSize="small"/>
               </a>
               <a 
                 href="https://linkedin.com/in/michael-nwoye-5703b023a"
                 className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-xl hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110 hover:rotate-6 fade-up ${isContentVisible ? 'animate' : ''}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <LinkedInIcon/>
+                <LinkedInIcon fontSize="small"/>
               </a>
           </div>
           

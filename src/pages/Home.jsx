@@ -6,6 +6,8 @@ import Skills from '../component/Skills'
 import Portfolio from '../component/Portfolio'
 import Fotter from '../component/Fotter'
 import SideBar from '../component/SideBar'
+import Resume from '../component/Resume'
+import Contact from '../component/Contact'
 
 const Home = () => {
   return (
@@ -18,7 +20,9 @@ const Home = () => {
         <Hero/>
         <About/>
         <Skills/>
+        <Resume/>
         <Portfolio/>
+        <Contact/>
         <Fotter/>
       </div>
     </div>
