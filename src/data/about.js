@@ -9,7 +9,7 @@ export const about = [
     "icon_birthday": "🎂",
     "icon_birthday_text": "August 18",
     "icon_website": "🌐",
-    "icon_website_text": "www.alexsmith.com",
+    "icon_website_text": "https://mike-portfolio-ruddy.vercel.app/",
     "icon_phone": "📱",
     "icon_phone_text": "+2348130285140",
     "icon_city": "🏙️",
@@ -20,7 +20,6 @@ export const about = [
     "icon_email_text": "nwoyechukwudimichael@gmail.com",
     "icon_freelance": "✨",
     "icon_freelance_text": "Available",
-    "age": "30",
     "degree": "Master of CS",
     "stack": ["React", "Node.js", "Tailwind CSS"]
   }

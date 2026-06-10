@@ -119,13 +119,6 @@ const About = () => {
                 
                 <ul className="space-y-4">
                   <li className='py-2 flex items-center group/item transform transition-all duration-300 hover:translate-x-2'>
-                    <span className="text-2xl mr-3">🎯</span>
-                    <div>
-                      <span className='font-semibold text-gray-700 dark:text-gray-200'>Age: </span>
-                      <span className='text-gray-600 dark:text-gray-400'>{aboutItem.age}</span>
-                    </div>
-                  </li>
-                  <li className='py-2 flex items-center group/item transform transition-all duration-300 hover:translate-x-2'>
                     <span className="text-2xl mr-3">{aboutItem.icon_degree}</span>
                     <div>
                       <span className='font-semibold text-gray-700 dark:text-gray-200'>Degree: </span>
