@@ -73,9 +73,9 @@ const Hero = () => {
               </div>
               
               <div className="mt-6 sm:mt-8 animate-fade-in-up">
-                <button className="px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-semibold hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <a className="px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-semibold hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" href="#portfolio">
                   View My Work
-                </button>
+                </a>
               </div>
             </div>
           </div>
